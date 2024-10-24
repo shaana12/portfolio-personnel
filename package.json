@@ -17,7 +17,7 @@
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://shaana12.github.io/portfolio-personnel/",
+  "homepage": "https://shaana12.github.io/portfolio-personnel",
   
   "scripts": {
     "start": "react-scripts start",
