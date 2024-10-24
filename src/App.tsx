@@ -9,7 +9,7 @@ import Projects from './pages/projects';
 
 function App() {
   return (
-    <Router> {/* Le Router englobe tout le contenu de l'application pour gérer la navigation */}
+    <Router basename='/portfolio-personnel'> {/* Le Router englobe tout le contenu de l'application pour gérer la navigation */}
       <div className="App">
         <Header />
         <Routes> {/* Définit les différentes routes de l'application */}
