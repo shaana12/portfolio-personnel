@@ -21,7 +21,10 @@ const Header: React.FC = () => {
   return (
     <header className="bg-grey p-8 relative"> {/* Header positionné en relatif */}
       <div className="container mx-auto flex justify-between items-center">
+        
+        <Link to="/"> {/* Lien vers la page d'accueil' */}
         <h1 className="titre txt-black text-2xl">SF</h1> {/* Titre du site */}
+              </Link>
 
         {/* Bouton du menu pour petits écrans */}
         <Button
