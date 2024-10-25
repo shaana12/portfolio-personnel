@@ -14,6 +14,7 @@ const Header: React.FC = () => {
     setIsOpen(false);  // Fermer le menu
   };
 
+
   return (
     <header className="bg-grey p-8 relative"> {/* Header positionné en relatif */}
       <div className="container mx-auto flex justify-between items-center">
@@ -31,7 +32,9 @@ const Header: React.FC = () => {
           <Link to="/" className="paragraphe txt-black hover:text-white">Accueil</Link>
           <Link to="/about" className="paragraphe txt-black hover:text-white">À Propos</Link>
           <Link to="/projects" className="paragraphe txt-black hover:text-white">Mes projets</Link>
-          <Button label="Me contacter" onClick={() => console.log('Clicked!')} />
+          <Link to="/contact"> {/* Lien vers la page de contact */}
+                <Button label="Me contacter" onClick={() => { console.log('Clicked!'); closeMenu(); }} />
+              </Link>
         </nav>
 
         {/* Menu mobile en position absolue pour afficher sous le header */}
