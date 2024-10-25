@@ -14,6 +14,9 @@ const Header: React.FC = () => {
     setIsOpen(false);  // Fermer le menu
   };
 
+  const goContact = () => {
+    
+  }
 
   return (
     <header className="bg-grey p-8 relative"> {/* Header positionné en relatif */}
@@ -32,9 +35,7 @@ const Header: React.FC = () => {
           <Link to="/" className="paragraphe txt-black hover:text-white">Accueil</Link>
           <Link to="/about" className="paragraphe txt-black hover:text-white">À Propos</Link>
           <Link to="/projects" className="paragraphe txt-black hover:text-white">Mes projets</Link>
-          <Link to="/contact"> {/* Lien vers la page de contact */}
-                <Button label="Me contacter" onClick={() => { console.log('Clicked!'); closeMenu(); }} />
-              </Link>
+          <Button label="Me contacter" onClick={() => console.log('Clicked!')} />
         </nav>
 
         {/* Menu mobile en position absolue pour afficher sous le header */}
@@ -43,7 +44,9 @@ const Header: React.FC = () => {
             <Link to="/" className="paragraphe txt-black hover:text-white" onClick={closeMenu}>Accueil</Link>
             <Link to="/about" className="paragraphe txt-black hover:text-white" onClick={closeMenu}>À Propos</Link>
             <Link to="/projects" className="paragraphe txt-black hover:text-white" onClick={closeMenu}>Mes projets</Link>
-            <Button label="Me contacter" onClick={() => { console.log('Clicked!'); closeMenu(); }} />
+            <Link to="/contact"> {/* Lien vers la page de contact */}
+                <Button label="Me contacter" onClick={() => { toggleMenu(); }} />
+              </Link>
           </nav>
         )}
       </div>
