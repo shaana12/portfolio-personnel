@@ -1,29 +1,48 @@
 // src/components/Header.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from './button';
 
 const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);  // État pour contrôler l'ouverture du menu
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen); // Inverser l'état du menu
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);  // Fermer le menu
+  };
+
   return (
-    <header className="bg-grey p-8"> {/* Couleur de fond et padding */}
-      <div className="container mx-auto flex justify-between items-center"> {/* Centrer le contenu */}
+    <header className="bg-grey p-8 relative"> {/* Header positionné en relatif */}
+      <div className="container mx-auto flex justify-between items-center">
         <h1 className="titre txt-black text-2xl">SF</h1> {/* Titre du site */}
-        <nav>
-          <ul className="flex space-x-8"> {/* Espacement entre les liens */}
-            <li>
-              <Link to="/" className="paragraphe txt-black hover:text-white">Accueil</Link> {/* Lien vers Accueil */}
-            </li>
-            <li>
-              <Link to="/about" className="paragraphe txt-black hover:text-white">À Propos</Link> {/* Lien vers À Propos */}
-            </li>
-            <li>
-              <Link to="/projects" className="paragraphe txt-black hover:text-white">Mes projets</Link> {/* Lien vers À Propos */}
-            </li>
-            <li>
-            <Button label="Me contacter" onClick={() => console.log('Clicked!')} />
-            </li>
-          </ul>
+
+        {/* Bouton du menu pour petits écrans */}
+        <Button
+          label={isOpen ? '✖' : '☰'} 
+          onClick={toggleMenu}
+          className="md:hidden text-black focus:outline-none"
+        />
+
+        {/* Menu principal visible seulement sur grand écran */}
+        <nav className="hidden md:flex space-x-8">
+          <Link to="/" className="paragraphe txt-black hover:text-white">Accueil</Link>
+          <Link to="/about" className="paragraphe txt-black hover:text-white">À Propos</Link>
+          <Link to="/projects" className="paragraphe txt-black hover:text-white">Mes projets</Link>
+          <Button label="Me contacter" onClick={() => console.log('Clicked!')} />
         </nav>
+
+        {/* Menu mobile en position absolue pour afficher sous le header */}
+        {isOpen && (
+          <nav className="absolute top-full left-0 w-full bg-grey shadow-lg flex flex-col space-y-4 p-4 md:hidden">
+            <Link to="/" className="paragraphe txt-black hover:text-white" onClick={closeMenu}>Accueil</Link>
+            <Link to="/about" className="paragraphe txt-black hover:text-white" onClick={closeMenu}>À Propos</Link>
+            <Link to="/projects" className="paragraphe txt-black hover:text-white" onClick={closeMenu}>Mes projets</Link>
+            <Button label="Me contacter" onClick={() => { console.log('Clicked!'); closeMenu(); }} />
+          </nav>
+        )}
       </div>
     </header>
   );
@@ -37,8 +56,7 @@ export default Header;
 
 
 
-
-// ---- VERSION RESPONSIVE ---- 
+// ---- VERSION RESPONSIVE ----
 
 // // src/components/Header.tsx
 // import React, { useState } from 'react'; // Importer useState pour gérer l'état
