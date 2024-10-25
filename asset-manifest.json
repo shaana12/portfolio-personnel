@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/portfolio-personnel/static/css/main.d83d0883.css",
-    "main.js": "/portfolio-personnel/static/js/main.9544d55e.js",
+    "main.js": "/portfolio-personnel/static/js/main.8a9fccab.js",
     "static/js/453.bc53a062.chunk.js": "/portfolio-personnel/static/js/453.bc53a062.chunk.js",
     "static/media/cv.png": "/portfolio-personnel/static/media/cv.25fedfb278c34d94811a.png",
     "static/media/portrait.jpg": "/portfolio-personnel/static/media/portrait.6321acbaae649a6d7bdc.jpg",
     "index.html": "/portfolio-personnel/index.html",
     "main.d83d0883.css.map": "/portfolio-personnel/static/css/main.d83d0883.css.map",
-    "main.9544d55e.js.map": "/portfolio-personnel/static/js/main.9544d55e.js.map",
+    "main.8a9fccab.js.map": "/portfolio-personnel/static/js/main.8a9fccab.js.map",
     "453.bc53a062.chunk.js.map": "/portfolio-personnel/static/js/453.bc53a062.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d83d0883.css",
-    "static/js/main.9544d55e.js"
+    "static/js/main.8a9fccab.js"
   ]
 }
