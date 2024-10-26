@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, type = "button", classN
       <button
         type={type} // Utilise la propriété type ici
         onClick={onClick} // Attachement de la fonction onClick pour gérer les clics sur le bouton.
-        className={`bg-button text-white paragraphe py-2 px-4 rounded-full hover:bg-blue-600 transition ${className}`}
+        className={`bg-button text-white paragraphe py-2 px-4 rounded-full transform transition-transform duration-300 hover:scale-110 ${className}`}
 
          // Affichage du texte du bouton (propriété label).
       >

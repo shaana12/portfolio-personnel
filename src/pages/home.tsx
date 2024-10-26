@@ -27,7 +27,7 @@ const Home: React.FC = () => {
 
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-center mb-16 min-h-screen">
     <div className="md:w-1/2 p-4 flex items-center justify-center">
-        <img src={portrait} alt="Portrait de Shana" className="h-[8(vh] w-full object-cover" />
+        <img src={portrait} alt="Portrait de Shana" className="h-[8(vh] w-full object-cover rounded-3xl" />
     </div>
 
     <div className="md:w-1/2 p-4 flex flex-col items-center justify-center"> {/* Ajout de flex-col ici */}

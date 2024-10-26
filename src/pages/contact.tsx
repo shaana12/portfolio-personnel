@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import Button from "../components/button";
+import emailjs from 'emailjs-com';
 
 const Contact: React.FC = () => {
+    // Déclaration des constantes pour les identifiants EmailJS
+    const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID!;
+    const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID!;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY!;
+
     // État pour les champs du formulaire
     const [formData, setFormData] = useState({
         name: "",
         email: "",
+        subject: "",  // Ajout du champ "sujet"
         message: "",
     });
 
@@ -21,17 +28,37 @@ const Contact: React.FC = () => {
     // Gérer la soumission du formulaire
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault(); // Empêcher le rechargement de la page
-        console.log("Données du formulaire:", formData);
-        // Ici, tu peux ajouter le code pour envoyer les données à ton serveur ou API
-        setFormData({ name: "", email: "", message: "" }); // Réinitialiser le formulaire
+
+        // Envoi de l'e-mail via EmailJS
+        emailjs.send(
+            serviceID,         // Utilisation du service ID
+            templateID,       // Utilisation du Template ID
+            {
+                name: formData.name,
+                email: formData.email,
+                subject: formData.subject,  // Ajout du sujet ici
+                message: formData.message,
+            },
+            publicKey          // Utilisation de la Public Key
+        )
+        .then((result) => {
+            console.log('E-mail envoyé !', result.text);
+        })
+        .catch((error) => {
+            console.error('Erreur lors de l\'envoi de l\'e-mail:', error);
+        });
+
+        // Réinitialiser le formulaire
+        setFormData({ name: "", email: "", subject: "", message: "" });
     };
 
     return (
         <div className="bg-grey p-8 min-h-screen flex flex-col items-center">
             <h1 className="txt-grey titre text-2xl mb-4">Contactez-moi</h1>
+            <br />
             <form onSubmit={handleSubmit} className="w-full max-w-md">
                 <div className="mb-4">
-                    <label className="block text-grey text-sm font-bold mb-2" htmlFor="name">
+                    <label className=" paragraphe block text-grey text-sm font-bold mb-2" htmlFor="name">
                         Nom
                     </label>
                     <input
@@ -45,7 +72,7 @@ const Contact: React.FC = () => {
                     />
                 </div>
                 <div className="mb-4">
-                    <label className="block text-grey text-sm font-bold mb-2" htmlFor="email">
+                    <label className=" paragraphe block text-grey text-sm font-bold mb-2" htmlFor="email">
                         Adresse e-mail
                     </label>
                     <input
@@ -59,7 +86,21 @@ const Contact: React.FC = () => {
                     />
                 </div>
                 <div className="mb-4">
-                    <label className="block text-grey text-sm font-bold mb-2" htmlFor="message">
+                    <label className=" paragraphe block text-grey text-sm font-bold mb-2" htmlFor="subject">
+                        Sujet
+                    </label>
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"   // Assurez-vous que le name correspond à la variable dans le template
+                        value={formData.subject}
+                        onChange={handleChange}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-grey leading-tight focus:outline-none focus:shadow-outline"
+                        required
+                    />
+                </div>
+                <div className="mb-4">
+                    <label className=" paragraphe block text-grey text-sm font-bold mb-2" htmlFor="message">
                         Message
                     </label>
                     <textarea
@@ -72,7 +113,7 @@ const Contact: React.FC = () => {
                         required
                     ></textarea>
                 </div>
-                <Button label="Envoyer" type="submit" onClick={() => console.log('Form submitted!')} />
+                <Button label="Envoyer" type="submit" />
             </form>
         </div>
     );

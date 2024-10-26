@@ -35,18 +35,20 @@ const Header: React.FC = () => {
 
         {/* Menu principal visible seulement sur grand écran */}
         <nav className="hidden md:flex space-x-8">
-          <Link to="/" className="paragraphe txt-black hover:text-white">Accueil</Link>
-          <Link to="/about" className="paragraphe txt-black hover:text-white">À Propos</Link>
-          <Link to="/projects" className="paragraphe txt-black hover:text-white">Mes projets</Link>
-          <Button label="Me contacter" onClick={() => console.log('Clicked!')} />
+          <Link to="/" className="paragraphe txt-black transition duration-300 hover:underline">Accueil</Link>
+          <Link to="/about" className="paragraphe txt-black transition duration-300 hover:underline">À Propos</Link>
+          <Link to="/projects" className="paragraphe txt-black transition duration-300 hover:underline">Mes projets</Link>
+          <Link to="/contact"> {/* Lien vers la page de contact */}
+                <Button label="Me contacter" onClick={() => { toggleMenu(); }} />
+              </Link>
         </nav>
 
         {/* Menu mobile en position absolue pour afficher sous le header */}
         {isOpen && (
           <nav className="absolute top-full left-0 w-full bg-grey shadow-lg flex flex-col space-y-4 p-4 md:hidden">
-            <Link to="/" className="paragraphe txt-black hover:text-white" onClick={closeMenu}>Accueil</Link>
-            <Link to="/about" className="paragraphe txt-black hover:text-white" onClick={closeMenu}>À Propos</Link>
-            <Link to="/projects" className="paragraphe txt-black hover:text-white" onClick={closeMenu}>Mes projets</Link>
+            <Link to="/" className="paragraphe txt-black transition duration-300 hover:underline" onClick={closeMenu}>Accueil</Link>
+            <Link to="/about" className="paragraphe txt-black transition duration-300 hover:underline" onClick={closeMenu}>À Propos</Link>
+            <Link to="/projects" className="paragraphe txt-black transition duration-300 hover:underline" onClick={closeMenu}>Mes projets</Link>
             <Link to="/contact"> {/* Lien vers la page de contact */}
                 <Button label="Me contacter" onClick={() => { toggleMenu(); }} />
               </Link>

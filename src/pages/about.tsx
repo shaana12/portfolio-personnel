@@ -7,7 +7,7 @@ const About: React.FC = () => {
         <div className="bg-grey min-h-screen p-8 flex flex-col items-center"> {/* Conteneur principal */}
         
             {/* Section d'introduction */}
-            <div className="text-center mb-8 max-w-2xl mt-10 mb-10">
+            <div className="text-center mb-8 max-w-2xl mt-10">
                 <h1 className="txt-grey titre text-2xl mb-4">A propos de moi</h1>
                 <p className="txt-grey paragraphe">
                     Je suis Shana Fortuné, développeuse passionnée par la blockchain et les technologies du web.
@@ -20,7 +20,7 @@ const About: React.FC = () => {
             {/* Section du CV */}
             <div className="w-full max-w-4xl text-center mt-8">
                 <h2 className="txt-grey titre text-2xl mb-4">Mon CV</h2>
-                <img src={cv} alt="CV Shana Fortuné" className="w-full h-auto object-contain" />
+                <img src={cv} alt="CV Shana Fortuné" className="w-full h-auto object-contain rounded-3xl" />
             </div>
 
         </div>
