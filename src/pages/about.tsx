@@ -13,7 +13,7 @@ const About: React.FC = () => {
                     Je suis Shana Fortuné, développeuse passionnée par la blockchain et les technologies du web.
                     Avec une expertise en React, TypeScript et d'autres technologies modernes, je suis toujours à la
                     recherche de nouveaux défis. Découvrez mon parcours professionnel.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem ipsa nemo commodi facilis temporibus doloribus rerum fugiat velit soluta, ducimus, voluptatibus, maiores debitis hic porro deleniti? Quod, provident doloribus!
+                   
                 </p>
             </div>
 

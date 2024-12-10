@@ -1,7 +1,7 @@
 import React from "react"; // importation de React
 import Button from "../components/button"; //importation du composant Button
 import { Link } from "react-router-dom";
-import portrait from '../assets/portrait.jpg';
+import portrait from '../assets/Capture d’écran 2024-12-10 à 15.26.12.png';
 import { useNavigate } from "react-router-dom";
 
 // Déclaration de la page Home
@@ -21,60 +21,86 @@ const Home: React.FC = () => {
     };
     
     return(
-    <div className="flex flex-col items-center justify-center min-h-screen bg-grey"> 
-
-    <div className="container mx-auto flex flex-col md:flex-row item-center justify-center mb-16 ">
-
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <div className="container mx-auto flex flex-col md:flex-row item-center justify-center mb-16">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-center mb-16 min-h-screen">
-    <div className="md:w-1/2 p-4 flex items-center justify-center">
-        <img src={portrait} alt="Portrait de Shana" className="h-[8(vh] w-full object-cover rounded-3xl" />
-    </div>
+          <div className="md:w-1/2 p-4 flex items-center justify-center">
+            <img src={portrait} alt="Portrait de Shana" className="h-[80vh] w-full object-cover rounded-3xl" />
+          </div>
 
-    <div className="md:w-1/2 p-4 flex flex-col items-center justify-center"> {/* Ajout de flex-col ici */}
-        <h1 className="txt-grey titre text-2xl text-center">A propos de moi</h1> {/* Centrer le texte */}
-        <br />
-        <p className="txt-grey paragraphe text-center">
-            Je suis Shana Fortuné, développeuse passionnée par la blockchain et les technologies du web.
-            Avec une expertise en React, TypeScript et d'autres technologies modernes, je suis toujours à la 
-            recherche de nouveaux défis. Découvrez mon parcours professionnel. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatem ipsa nemo commodi facilis temporibus doloribus rerum fugiat velit soluta, ducimus, voluptatibus, maiores debitis hic porro deleniti? Quod, provident doloribus!
-        </p>
-        <br />
-        <Button label="En savoir plus" onClick={handleClickAbout} />
-    </div>
-</div>
-
-    </div>
+          <div className="md:w-1/2 p-4 flex flex-col items-center justify-center">
+            <h1 className="text-3xl font-bold text-gray-800 text-center mb-4">À propos de moi</h1>
+            <p className="text-gray-700 text-center text-lg mb-6">
+              Je suis Shana Fortuné, développeuse passionnée par la blockchain et les technologies du web.
+              Avec une expérience en React, TypeScript et d'autres technologies modernes, je suis toujours à la recherche de nouveaux défis.
+            </p>
+            <Button label="En savoir plus" onClick={handleClickAbout} />
+          </div>
+        </div>
+      </div>
 
 
 
-    <div className="text-center mb-16 mt-16">
-        <h2 className="text-2xl txt-grey titre mb-4">Aperçu de mes projets</h2>
-        <p className=" txt-grey paragraphe mb-6">
-          J'ai travaillé sur divers projets utilisant les dernières technologies, notamment la blockchain,
-          le développement front-end avec React, et bien plus encore.
+    {/* Section Projets */}
+    <div className="text-center mb-16 mt-16 px-4">
+        <h2 className="text-3xl text-gray-800 font-bold mb-4">Aperçu de mes projets</h2>
+        <p className="text-gray-600 mb-6 text-lg">
+          J'ai travaillé sur divers projets utilisant les dernières technologies, notamment la blockchain, le développement front-end avec React, et bien plus encore.
         </p>
 
         {/* Aperçu des projets */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4 md:px-8">
           {/* Projet 1 */}
           <div className="bg-white shadow-md p-4 rounded-lg">
-            <h3 className="text-xl txt-black titre mb-2">Projet 1</h3>
-            <p className="txt-grey paragraphe">Description du projet 1, une brève présentation du travail réalisé.</p>
+            <h3 className="text-xl font-bold txt-black mb-2">Portfolio personnel</h3>
+            <p className="txt-grey mb-4">Ce projet à pour but de me présenter, en mettat en avant mes compétences et mes projets</p>
+            <a
+        href="https://github.com/shaana12" // Remplace par l'URL de ton choix
+        target="_blank" // Ouvre le lien dans un nouvel onglet
+        rel="noopener noreferrer" // Sécurise l'ouverture d'un nouvel onglet
+        className="text-blue-500 hover:underline "
+      >
+        Voir le projet
+      </a>
           </div>
           {/* Projet 2 */}
           <div className="bg-white shadow-md p-4 rounded-lg">
-            <h3 className="text-xl txt-black titre mb-2">Projet 2</h3>
-            <p className="txt-grey paragraphe">Description du projet 2, une brève présentation du travail réalisé.</p>
+            <h3 className="text-xl font-bold txt-black  mb-2">YDI</h3>
+            <p className="txt-grey mb-4 ">Site vitrine pour un formateur trading/marchés financiers</p>
+            <a
+        href="https://ideserveit.fr/" // Remplace par l'URL de ton choix
+        target="_blank" // Ouvre le lien dans un nouvel onglet
+        rel="noopener noreferrer" // Sécurise l'ouverture d'un nouvel onglet
+        className="text-blue-500 hover:underline "
+      >
+        Voir le projet
+      </a>
           </div>
           {/* Projet 3 */}
           <div className="bg-white shadow-md p-4 rounded-lg">
-            <h3 className="text-xl txt-black titre mb-2">Projet 3</h3>
-            <p className="txt-grey paragraphe">Description du projet 3, une brève présentation du travail réalisé.</p>
+            <h3 className="text-xl font-bold txt-black  mb-2">JMC</h3>
+            <p className="txt-grey mb-4"><span className="text-orange-400">Projet en cours</span> Site pour une association qui aide les mamans célibaires et les enfants au Congo</p>
+            <a
+        href="https://shaana12.github.io/association/" // Remplace par l'URL de ton choix
+        target="_blank" // Ouvre le lien dans un nouvel onglet
+        rel="noopener noreferrer" // Sécurise l'ouverture d'un nouvel onglet
+        className="text-blue-500 hover:underline "
+      >
+        Voir le projet
+      </a>
           </div>
           {/* Projet 4 */}
           <div className="bg-white shadow-md p-4 rounded-lg">
-            <h3 className="text-xl txt-black titre mb-2">Projet 4</h3>
-            <p className="txt-grey paragraphe">Description du projet 4, une brève présentation du travail réalisé.</p>
+            <h3 className="text-xl font-bold txt-black  mb-2">Typescript-to-Rust</h3>
+            <p className="txt-grey mb-4"><span className="text-orange-400">Projet en cours</span> Générateur de Rust à partir de Typescript</p>
+            <a
+        href="https://github.com/Bencooo/Typescript-to-Rust" // Remplace par l'URL de ton choix
+        target="_blank" // Ouvre le lien dans un nouvel onglet
+        rel="noopener noreferrer" // Sécurise l'ouverture d'un nouvel onglet
+        className="text-blue-500 hover:underline "
+      >
+        Voir le projet
+      </a>
           </div>
         </div>
 
