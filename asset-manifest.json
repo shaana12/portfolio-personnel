@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/portfolio-personnel/static/css/main.8540ac82.css",
-    "main.js": "/portfolio-personnel/static/js/main.44d3fc69.js",
+    "main.js": "/portfolio-personnel/static/js/main.b521c72d.js",
     "static/js/453.bc53a062.chunk.js": "/portfolio-personnel/static/js/453.bc53a062.chunk.js",
     "static/media/Capture d’écran 2024-12-10 à 15.26.12.png": "/portfolio-personnel/static/media/Capture d’écran 2024-12-10 à 15.26.12.4c9392865edf033f73b3.png",
-    "static/media/cv.png": "/portfolio-personnel/static/media/cv.522ccf555b770e0ccbec.png",
+    "static/media/cv.png": "/portfolio-personnel/static/media/cv.fd312773f1f2eea31812.png",
     "index.html": "/portfolio-personnel/index.html",
     "main.8540ac82.css.map": "/portfolio-personnel/static/css/main.8540ac82.css.map",
-    "main.44d3fc69.js.map": "/portfolio-personnel/static/js/main.44d3fc69.js.map",
+    "main.b521c72d.js.map": "/portfolio-personnel/static/js/main.b521c72d.js.map",
     "453.bc53a062.chunk.js.map": "/portfolio-personnel/static/js/453.bc53a062.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8540ac82.css",
-    "static/js/main.44d3fc69.js"
+    "static/js/main.b521c72d.js"
   ]
 }
